@@ -1,0 +1,76 @@
+<html>
+<head>
+	
+	
+	
+	
+	<title>Search</title>
+	
+	
+	
+	<style type="text/css">
+		
+		body {
+			
+			background-color: cyan;
+			
+		}
+		
+		
+		body:hover{
+			
+			background-color:#008000;
+		}
+		
+		form {
+			
+			font:"Arial Black";
+			font-size:large;
+			font-style:italic;
+			font-weight:500;
+			border:dotted 5px yellow;
+			
+		}
+		
+		
+		form:hover {
+			
+			background-color:red;
+			font:"Arial Black";
+			font-size:larger;
+			color:#FF0000;
+			
+		
+			
+			
+		}
+		
+		P {
+			font:"Arial Black";
+			
+			
+			font-size:larger;
+			color:magneta ;
+			font-weight:400;
+		}
+		
+		
+		
+	</style>
+	
+	
+</head>
+
+<body>
+	{% if error %}
+        <p>Please submit a search term.</p>
+    {% endif %}
+	 <p>Please submit a search term.</p>
+	<form action="/search/" method="get">
+		
+		<input type="text" name="q" />
+		<input type="submit" value="Search" />
+	</form>
+</body>
+
+></html>

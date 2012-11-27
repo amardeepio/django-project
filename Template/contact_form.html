@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Contact us</title>
+    
+    <style type="text/css">
+    	
+    	h1 {
+    		font:"Calisto MT";
+    		font-weight:500;
+    		color:#FF0000;
+    		position:relative;
+    		
+    		
+    		
+    	}
+    	
+    	div {
+    	
+    		
+    		border: dashed 5px red;
+    		background-color:#FFFF00;
+    		
+    	}
+    	
+    	div:hover{
+    		
+    		border:groove 5px blue;
+    		background-color:gray;
+    		
+    	}
+    	
+    	
+    	
+    </style>
+</head>
+<body>
+    <h1 align="center">Contact us</h1>
+
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+<div>
+    <form action="/thanks/"  method="post">{% csrf_token %}
+        <p>Subject: <input type="text" name="subject" value="{{ subject }}"></p>
+        <p>Your e-mail (optional): <input type="text" name="email" value="{{ email }}"></p>
+        <p>Message: <textarea name="message" rows="10" cols="50" >**{{ message }}**</textarea></p>
+        <input type="submit" value="Submit">
+        
+    </form>
+    
+    </div>
+</body>
+</html>

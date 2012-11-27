@@ -1,0 +1,55 @@
+<html>
+
+<head>
+
+<title> ADVANCE SEARCH </title>
+
+<style type="text/css">
+	
+	body {
+		
+		background-color:#FFFF00;
+		border:dashed 5px red;
+	}
+	
+	body:hover{
+		
+		background-color:pink;
+		border:dotted 5px cyan;
+		
+	}
+	
+	
+	p {
+		
+		color:blue;
+		font:"Arial Black";
+		font-size:larger;
+		font-weight:400;
+		text-align:center;
+		position:relative;
+		
+	}
+	
+</style>
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+
+
+
+{% if books %}
+    <p>Found {{ books|length }} book{{ books|pluralize }}.</p>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.title }}</li>
+     h
+     
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books matched your search criteria.</p>
+{% endif %}
+
+
+</head>
+</html>
